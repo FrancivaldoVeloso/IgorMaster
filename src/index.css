@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Fredoka', sans-serif;
+    background: radial-gradient(circle at 50% 20%, #5c0606 0%, #240202 65%, #0f0101 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Brilho metálico dourado estilo Fortune Tiger */
+.gold-text {
+  background: linear-gradient(180deg, #FFF7CC 0%, #FFD700 45%, #D97706 85%, #FEF08A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 2px 0px #5c1902) drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.7));
+}
+
+.gold-border-ornate {
+  background: linear-gradient(135deg, #fef08a 0%, #f59e0b 25%, #b45309 50%, #fbbf24 75%, #fef08a 100%);
+  box-shadow:
+    0 0 25px rgba(245, 158, 11, 0.45),
+    inset 0 2px 4px rgba(255, 255, 255, 0.8),
+    inset 0 -3px 6px rgba(120, 53, 15, 0.9);
+}
+
+.imperial-pattern {
+  background-color: #6b0505;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.18) 0%, transparent 60%),
+    repeating-linear-gradient(45deg, rgba(255, 215, 0, 0.04) 0px, rgba(255, 215, 0, 0.04) 2px, transparent 2px, transparent 12px),
+    repeating-linear-gradient(-45deg, rgba(255, 215, 0, 0.04) 0px, rgba(255, 215, 0, 0.04) 2px, transparent 2px, transparent 12px);
+}
+
+/* Animação contínua de partículas e lanternas */
+@keyframes float-lantern {
+  0%, 100% { transform: translateY(0px) rotate(-3deg); }
+  50% { transform: translateY(-7px) rotate(3deg); }
+}
+
+.animate-lantern {
+  animation: float-lantern 3.6s ease-in-out infinite;
+}
+
+@keyframes coin-fall {
+  0% {
+    transform: translateY(-40px) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  85% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(860px) rotate(360deg) scale(1);
+    opacity: 0;
+  }
+}
+
+.animate-coin-fall {
+  animation: coin-fall linear infinite;
+}
+
+/* Scrollbar customizada para modais */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #2b0303;
+}
+::-webkit-scrollbar-thumb {
+  background: #d97706;
+  border-radius: 9999px;
+}
+
